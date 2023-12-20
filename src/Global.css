@@ -1,0 +1,21 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+}
+
+/* Nahayate Arze Project Mikhaym Enghadar Bashe too All Divice */
+/* Margin Site Ro Vasat Chin Mikone */
+body {
+  margin: auto;
+  min-width: 1000px;
+  min-height: 100vh;
+  padding: 10px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
