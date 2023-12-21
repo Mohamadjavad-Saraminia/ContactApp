@@ -1,3 +1,5 @@
+import Contactitem from "./Contactitem"
+
 /* eslint-disable react/prop-types */
 function Contactlist({ contacts }) {
     return (
@@ -7,26 +9,7 @@ function Contactlist({ contacts }) {
             {contacts.length ? (
                 <ul>
                     {contacts.map((contact) => (
-                        <li key={contact.id}>
-
-                            <p>
-                                {contact.name}
-                                {contact.lastName}
-                            </p>
-
-                            <p>
-                                {/* win+;=emoji */}
-                                <span>📭</span>
-                                {contact.mail}
-                            </p>
-
-                            <p>
-                                <span>📞</span>
-                                {contact.phone}
-                            </p>
-
-                            <button>❌</button>
-                        </li>
+                        <Contactitem key={contact.id} data={contact} />
                     ))}
                 </ul>
             ) :
