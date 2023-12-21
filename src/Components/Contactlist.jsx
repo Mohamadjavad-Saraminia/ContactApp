@@ -1,8 +1,16 @@
-
-function Contactlist(props) {
-    console.log(props)
+/* eslint-disable react/prop-types */
+function Contactlist({ contacts }) {
+    console.log(contacts)
     return (
-        <div>Contactlist</div>
+        <div>
+            <h3>Contactlist</h3>
+            <ul>
+                {contacts.map((contact) => (
+                    <li key={contact.id}>{contact.name}</li>
+                ))}
+            </ul>
+        </div>
+
     )
 }
 

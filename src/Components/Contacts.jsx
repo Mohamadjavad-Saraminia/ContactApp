@@ -2,11 +2,13 @@ import { useState } from 'react'
 import styles from '../Components/Contact.module.css'
 import Contactlist from './Contactlist';
 import inputs from '../Constance/Inputs';
-function Contact() {
+import { v4 } from 'uuid';
+function Contacts() {
 
     const [contacts, setContacts] = useState([]);
     const [alert, setAlert] = useState("");
     const [contact, setContact] = useState({
+        id: "",
         name: "",
         lastname: "",
         email: "",
@@ -17,6 +19,7 @@ function Contact() {
 
         const name = event.target.name;
         const value = event.target.value;
+
         setContact((contact) => ({ ...contact, [name]: value }))
     };
 
@@ -26,7 +29,9 @@ function Contact() {
             return;
         }
         setAlert("");
-        setContacts((contacts) => [...contacts, contact]);
+        //baraye sakhte Uniqe cod ba Package UUID
+        const newContact = { ...contact, id: v4() };
+        setContacts((contacts) => [...contacts, newContact]);
         setContact({
             name: "",
             lastname: "",
@@ -57,4 +62,4 @@ function Contact() {
     )
 }
 
-export default Contact
+export default Contacts

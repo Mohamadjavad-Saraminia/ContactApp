@@ -1,4 +1,4 @@
-import Contact from "./Components/Contact";
+import Contacts from "./Components/Contacts";
 import Header from "./Components/Header";
 
 const App = () => {
@@ -6,7 +6,7 @@ const App = () => {
     <div>
 
       <Header />
-      <Contact />
+      <Contacts />
     </div>
   );
 };
