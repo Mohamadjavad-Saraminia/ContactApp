@@ -59,7 +59,7 @@ function Contacts() {
                         onChange={changHandeler}
                     />))}
 
-                <button onClick={addHandeler} > Add contact</button>
+                <button className={styles.botton} onClick={addHandeler} > Add contact</button>
                 <div className={styles.alert}>{alert && <p>{alert}</p>}</div>
                 <Contactlist contacts={contacts} deleteHandeler={deleteHandeler} />
             </div>
