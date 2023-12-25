@@ -14,6 +14,11 @@ function Contacts() {
         email: "",
         phone: "",
     });
+
+    const deleteHandeler = (id) => {
+        const newContacts = contacts.filter(contact => contact.id !== id);
+        setContacts(newContacts);
+    }
     //voroodihaye inputha
     const changHandeler = (event) => {
 
@@ -55,8 +60,9 @@ function Contacts() {
 
                 <button onClick={addHandeler} > Add contact</button>
                 <div>{alert && <p>{alert}</p>}</div>
+                <Contactlist contacts={contacts} deleteHandeler={deleteHandeler} />
             </div>
-            <Contactlist contacts={contacts} />
+
         </div>
 
     )

@@ -1,6 +1,6 @@
 //deStructur kardim + Reusble component Contactitem
 // eslint-disable-next-line react/prop-types
-function Contactitem({ data: { id, name, lastName, email, phone } }) {
+function Contactitem({ data: { id, name, lastName, email, phone }, deleteHandeler }) {
     return (
         <li key={id}>
 
@@ -20,7 +20,7 @@ function Contactitem({ data: { id, name, lastName, email, phone } }) {
                 {phone}
             </p>
 
-            <button>❌</button>
+            <button onClick={() => deleteHandeler(id)}>❌</button>
         </li>
     )
 }

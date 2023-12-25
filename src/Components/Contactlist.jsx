@@ -1,7 +1,7 @@
 import Contactitem from "./Contactitem"
 
 /* eslint-disable react/prop-types */
-function Contactlist({ contacts }) {
+function Contactlist({ contacts, deleteHandeler }) {
     return (
         <div>
             <h3>Contactlist</h3>
@@ -9,7 +9,7 @@ function Contactlist({ contacts }) {
             {contacts.length ? (
                 <ul>
                     {contacts.map((contact) => (
-                        <Contactitem key={contact.id} data={contact} />
+                        <Contactitem key={contact.id} data={contact} deleteHandeler={deleteHandeler} />
                     ))}
                 </ul>
             ) :
