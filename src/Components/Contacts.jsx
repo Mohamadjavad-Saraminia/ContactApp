@@ -1,8 +1,9 @@
 import { useState } from 'react'
-import styles from '../Components/Contact.module.css'
 import Contactlist from './Contactlist';
 import inputs from '../Constance/Inputs';
 import { v4 } from 'uuid';
+
+import styles from '../Components/Contacts.module.css'
 function Contacts() {
 
     const [contacts, setContacts] = useState([]);
@@ -30,7 +31,7 @@ function Contacts() {
 
     const addHandeler = () => {
         if (!contact.name || !contact.lastname || !contact.email || !contact.phone) {
-            setAlert("Please enter valid data");
+            setAlert("Please enter valid data!");
             return;
         }
         setAlert("");
@@ -45,8 +46,8 @@ function Contacts() {
         });
     }
     return (
-        <div>
-            <div className={styles.container}>
+        <div className={styles.contauner}>
+            <div className={styles.form}>
                 {/* map mizanam ta inputha ke Moshakhas kardam too jsT sakhte beshan */}
                 {inputs.map((input, index) => (
                     <input
@@ -59,7 +60,7 @@ function Contacts() {
                     />))}
 
                 <button onClick={addHandeler} > Add contact</button>
-                <div>{alert && <p>{alert}</p>}</div>
+                <div className={styles.alert}>{alert && <p>{alert}</p>}</div>
                 <Contactlist contacts={contacts} deleteHandeler={deleteHandeler} />
             </div>
 

@@ -4,7 +4,7 @@ import Contactitem from "./Contactitem"
 function Contactlist({ contacts, deleteHandeler }) {
     return (
         <div>
-            <h3>Contactlist</h3>
+            <h3>Contacts list: </h3>
             {/* baraye Inke No Contact neshoon bedim| Yek ternery Operator Neveshtam */}
             {contacts.length ? (
                 <ul>
